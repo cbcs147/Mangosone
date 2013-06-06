@@ -17,7 +17,7 @@
  */
 
 #include "mangLua.h"
-#include "Policies/SingletonImp.h"
+#include "Policies/Singleton.h"
 #include "Chat.h"
 #include "mangLuaFunctions.h"
 #include "FunctionTables.h"
