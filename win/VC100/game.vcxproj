@@ -146,14 +146,18 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
+      <AdditionalOptions>/Zm300 %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\dep\include;..\..\src\framework;..\..\src\shared;..\..\src\game\vmap;..\..\dep\ACE_wrappers;..\..\dep\include\g3dlite;..\..\src\game;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\dep\include;..\..\src\framework;..\..\src\shared;..\..\src\game\vmap;..\..\dep\ACE_wrappers;..\..\dep\include\g3dlite;..\..\src\game;..\..\dep\lua-5.2.1\src;..\..\src\game\mangLua\Functions;..\..\src\game\mangLua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;MANGOS_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pchdef.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\game__$(Platform)_$(Configuration)\game.pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>.\game__$(Platform)_$(Configuration)\</AssemblerListingLocation>
       <ObjectFileName>.\game__$(Platform)_$(Configuration)\</ObjectFileName>
       <ProgramDataBaseFileName>.\game__$(Platform)_$(Configuration)\</ProgramDataBaseFileName>
@@ -161,6 +165,7 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CallingConvention>Cdecl</CallingConvention>
+      <ForcedIncludeFiles>pchdef.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <ResourceCompile>
@@ -169,7 +174,7 @@
     </ResourceCompile>
     <Lib>
       <AdditionalDependencies>.\shared__$(Platform)_$(Configuration)\shared.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalDependencies>.\g3dlite__$(Platform)_$(Configuration)\g3dlite.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>.\g3dlite__$(Platform)_$(Configuration)\g3dlite.lib;.\lua__$(Platform)_$(Configuration)\lua.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
   </ItemDefinitionGroup>
@@ -178,7 +183,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/bigobj /Zm300 %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\dep\include;..\..\src\framework;..\..\src\shared;..\..\src\game\vmap;..\..\dep\ACE_wrappers;..\..\dep\include\g3dlite;..\..\src\game;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;MANGOS_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -187,6 +192,9 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pchdef.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\game__$(Platform)_$(Configuration)\game.pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>.\game__$(Platform)_$(Configuration)\</AssemblerListingLocation>
       <ObjectFileName>.\game__$(Platform)_$(Configuration)\</ObjectFileName>
       <ProgramDataBaseFileName>.\game__$(Platform)_$(Configuration)\</ProgramDataBaseFileName>
@@ -194,6 +202,7 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CallingConvention>Cdecl</CallingConvention>
+      <ForcedIncludeFiles>pchdef.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <ResourceCompile>
@@ -208,14 +217,18 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
+      <AdditionalOptions>/Zm300 %(AdditionalOptions)</AdditionalOptions>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\..\dep\include;..\..\src\framework;..\..\src\shared;..\..\src\game\vmap;..\..\dep\ACE_wrappers;..\..\dep\include\g3dlite;..\..\src\game;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\dep\include;..\..\src\framework;..\..\src\shared;..\..\src\game\vmap;..\..\dep\ACE_wrappers;..\..\dep\include\g3dlite;..\..\src\game;..\..\dep\lua-5.2.1\src;..\..\src\game\mangLua\Functions;..\..\src\game\mangLua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pchdef.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\game__$(Platform)_$(Configuration)\game.pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>.\game__$(Platform)_$(Configuration)\</AssemblerListingLocation>
       <ObjectFileName>.\game__$(Platform)_$(Configuration)\</ObjectFileName>
       <ProgramDataBaseFileName>.\game__$(Platform)_$(Configuration)\</ProgramDataBaseFileName>
@@ -223,6 +236,7 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CallingConvention>Cdecl</CallingConvention>
+      <ForcedIncludeFiles>pchdef.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <ResourceCompile>
@@ -231,7 +245,7 @@
     </ResourceCompile>
     <Lib>
       <AdditionalDependencies>.\shared__$(Platform)_$(Configuration)\shared.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalDependencies>.\g3dlite__$(Platform)_$(Configuration)\g3dlite.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>.\g3dlite__$(Platform)_$(Configuration)\g3dlite.lib;.\lua__$(Platform)_$(Configuration)\lua.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
   </ItemDefinitionGroup>
@@ -240,7 +254,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/bigobj /Zm300 %(AdditionalOptions)</AdditionalOptions>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <AdditionalIncludeDirectories>..\..\dep\include;..\..\src\framework;..\..\src\shared;..\..\src\game\vmap;..\..\dep\ACE_wrappers;..\..\dep\include\g3dlite;..\..\src\game;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -249,6 +263,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pchdef.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\game__$(Platform)_$(Configuration)\game.pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>.\game__$(Platform)_$(Configuration)\</AssemblerListingLocation>
       <ObjectFileName>.\game__$(Platform)_$(Configuration)\</ObjectFileName>
       <ProgramDataBaseFileName>.\game__$(Platform)_$(Configuration)\</ProgramDataBaseFileName>
@@ -256,6 +273,7 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CallingConvention>Cdecl</CallingConvention>
+      <ForcedIncludeFiles>pchdef.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <ResourceCompile>
@@ -278,6 +296,9 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>.\game__$(Platform)_$(Configuration)\game.pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>.\game__$(Platform)_$(Configuration)\</AssemblerListingLocation>
       <ObjectFileName>.\game__$(Platform)_$(Configuration)\</ObjectFileName>
       <ProgramDataBaseFileName>.\game__$(Platform)_$(Configuration)\</ProgramDataBaseFileName>
@@ -311,6 +332,9 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>.\game__$(Platform)_$(Configuration)\game.pch</PrecompiledHeaderOutputFile>
       <AssemblerListingLocation>.\game__$(Platform)_$(Configuration)\</AssemblerListingLocation>
       <ObjectFileName>.\game__$(Platform)_$(Configuration)\</ObjectFileName>
       <ProgramDataBaseFileName>.\game__$(Platform)_$(Configuration)\</ProgramDataBaseFileName>
@@ -406,6 +430,7 @@
     <ClCompile Include="..\..\src\game\LootMgr.cpp" />
     <ClCompile Include="..\..\src\game\Mail.cpp" />
     <ClCompile Include="..\..\src\game\MailHandler.cpp" />
+    <ClCompile Include="..\..\src\game\mangLua\mangLua.cpp" />
     <ClCompile Include="..\..\src\game\Map.cpp" />
     <ClCompile Include="..\..\src\game\MapManager.cpp" />
     <ClCompile Include="..\..\src\game\MapPersistentStateMgr.cpp" />
@@ -432,9 +457,13 @@
     <ClCompile Include="..\..\src\game\PathFinder.cpp" />
     <ClCompile Include="..\..\src\game\pchdef.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">pchdef.h</PrecompiledHeaderFile>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|X64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|X64'">pchdef.h</PrecompiledHeaderFile>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">pchdef.h</PrecompiledHeaderFile>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|X64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|X64'">pchdef.h</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="..\..\src\game\Pet.cpp" />
     <ClCompile Include="..\..\src\game\PetAI.cpp" />
@@ -569,6 +598,17 @@
     <ClInclude Include="..\..\src\game\Language.h" />
     <ClInclude Include="..\..\src\game\LootMgr.h" />
     <ClInclude Include="..\..\src\game\Mail.h" />
+    <ClInclude Include="..\..\src\game\mangLua\Functions\AuraFunctions.h" />
+    <ClInclude Include="..\..\src\game\mangLua\Functions\FunctionTables.h" />
+    <ClInclude Include="..\..\src\game\mangLua\Functions\GameobjectFunctions.h" />
+    <ClInclude Include="..\..\src\game\mangLua\Functions\GlobalFunctions.h" />
+    <ClInclude Include="..\..\src\game\mangLua\Functions\ItemFunctions.h" />
+    <ClInclude Include="..\..\src\game\mangLua\Functions\PacketFunctions.h" />
+    <ClInclude Include="..\..\src\game\mangLua\Functions\SpellFunctions.h" />
+    <ClInclude Include="..\..\src\game\mangLua\Functions\TaxiFunctions.h" />
+    <ClInclude Include="..\..\src\game\mangLua\Functions\UnitFunctions.h" />
+    <ClInclude Include="..\..\src\game\mangLua\mangLua.h" />
+    <ClInclude Include="..\..\src\game\mangLua\mangLuaFunctions.h" />
     <ClInclude Include="..\..\src\game\Map.h" />
     <ClInclude Include="..\..\src\game\MapManager.h" />
     <ClInclude Include="..\..\src\game\MapPersistentStateMgr.h" />

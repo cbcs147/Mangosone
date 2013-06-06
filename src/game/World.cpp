@@ -65,6 +65,7 @@
 #include "AuctionHouseBot/AuctionHouseBot.h"
 #include "CharacterDatabaseCleaner.h"
 #include "CreatureLinkingMgr.h"
+#include "mangLua/mangLua.h"
 
 INSTANTIATE_SINGLETON_1(World);
 
@@ -1275,6 +1276,10 @@ void World::SetInitialWorldSettings()
             sLog.outError("Scripting library build for old mangosd revision. You need rebuild it.");
             break;
     }
+
+    ///- Start mangLua System
+    sLog.outString("Starting mangLua System...");
+    smangLua.Start();
 
     ///- Initialize game time and timers
     sLog.outString("DEBUG:: Initialize game time and timers");
