@@ -17,6 +17,9 @@
  */
 
 #include "Policies/Singleton.h"
+//These two files are in shared/
+#include "Common.h"
+#include "Log.h"
 
 extern "C" {
     #include <lua.h>

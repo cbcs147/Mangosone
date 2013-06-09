@@ -342,6 +342,18 @@ set(LIBRARY_SRCS
     WorldSocket.h
     WorldSocketMgr.cpp
     WorldSocketMgr.h
+    mangLua/mangLua.cpp
+    mangLua/mangLua.h
+    mangLua/mangLuaFunctions.h
+    mangLua/Functions/AuraFunctions.h
+    mangLua/Functions/FunctionTables.h
+    mangLua/Functions/GameobjectFunctions.h
+    mangLua/Functions/GlobalFunctions.h
+    mangLua/Functions/ItemFunctions.h
+    mangLua/Functions/PacketFunctions.h
+    mangLua/Functions/SpellFunctions.h
+    mangLua/Functions/TaxiFunctions.h
+    mangLua/Functions/UnitFunctions.h
    )
 
 include_directories(
@@ -350,6 +362,8 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/AuctionHouseBot
   ${CMAKE_CURRENT_SOURCE_DIR}/BattleGround
   ${CMAKE_CURRENT_SOURCE_DIR}/OutdoorPvP
+  ${CMAKE_CURRENT_SOURCE_DIR}/mangLua
+  ${CMAKE_CURRENT_SOURCE_DIR}/mangLua/Functions
   ${CMAKE_SOURCE_DIR}/dep/include/g3dlite
   ${CMAKE_SOURCE_DIR}/dep/recastnavigation/Detour
   ${CMAKE_SOURCE_DIR}/dep/recastnavigation/
