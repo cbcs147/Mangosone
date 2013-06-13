@@ -427,6 +427,7 @@ add_library(${LIBRARY_NAME} STATIC
 target_link_libraries(${LIBRARY_NAME}
   shared
   detour
+  lua
 )
 
 if(UNIX)
