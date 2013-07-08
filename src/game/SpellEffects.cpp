@@ -4542,7 +4542,6 @@ void Spell::EffectWeaponDmg(SpellEffectIndex eff_idx)
             // Devastate
             if (m_spellInfo->SpellVisual == 671 && m_spellInfo->SpellIconID == 1508)
             {
-
                 // Sunder Armor
                 Aura* sunder = unitTarget->GetAura(SPELL_AURA_MOD_RESISTANCE, SPELLFAMILY_WARRIOR, UI64LIT(0x0000000000004000), m_caster->GetObjectGuid());
 
@@ -4563,7 +4562,7 @@ void Spell::EffectWeaponDmg(SpellEffectIndex eff_idx)
                     {
                         // only highest rank is shown in spell book, so simply check if shown in spell book
                         if (!itr->second.active || itr->second.disabled || itr->second.state == PLAYERSPELL_REMOVED)
-                           continue;
+                            continue;
 
                         SpellEntry const *spellInfo = sSpellStore.LookupEntry(itr->first);
                         if (!spellInfo)
@@ -4575,8 +4574,8 @@ void Spell::EffectWeaponDmg(SpellEffectIndex eff_idx)
                             m_caster->CastSpell(unitTarget, spellInfo->Id, true);
                             break;
                         }
-                    }
-                }
+                     }
+                 }
             }
             break;
         }
