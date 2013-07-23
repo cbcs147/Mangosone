@@ -345,11 +345,6 @@ CleanCharacterDB = 1
 #        Default: "Ra.log"
 #                 "" - Empty name for disable
 #
-#    WardenLogFile
-#        Log file of Warden
-#        Default: ""           - no log file created
-#                 "warden.log" - recommended name to create a log file
-#
 #    LogColors
 #        Color for messages (format "normal_color details_color debug_color error_color")
 #        Colors: 0 - BLACK, 1 - RED, 2 - GREEN,  3 - BROWN, 4 - BLUE, 5 - MAGENTA, 6 -  CYAN, 7 - GREY,
@@ -393,7 +388,6 @@ GmLogFile = ""
 GmLogTimestamp = 0
 GmLogPerAccount = 0
 RaLogFile = ""
-WardenLogFile = "warden.log"
 LogColors = ""
 
 ###################################################################################################################
@@ -1686,6 +1680,10 @@ Rate.RAF.LevelPerLevel  = 0.5
 #                     A low number increases traffic and load on client and server side.
 #        Default:     15 - (15 Seconds)
 #                     0  - (Send check as soon as possible)
+#    WardenLogFile
+#        Log file of Warden
+#        Default: ""           - no log file created
+#                 "warden.log" - recommended name to create a log file
 #
 ###################################################################################################################
 
@@ -1695,3 +1693,14 @@ Warden.BanLength            = 900000
 Warden.NumChecks            = 3
 Warden.ClientResponseDelay  = 90
 Warden.ClientCheckHoldOff   = 15
+WardenLogFile = "warden.log"
+
+###################################################################################################################
+#
+#  RATE_XP_PETKILL
+#
+#    Default:1
+#
+###################################################################################################################
+
+Rate.XP.PetKill = 1
